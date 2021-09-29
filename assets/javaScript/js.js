@@ -27,6 +27,7 @@ function saveCity() {
         histBtn.classList = "btn btn-secondary gap-2 col-8 mx-auto mb-3";
         histBtn.innerHTML = cityname;
         historyBox.append(histBtn);
+        //comment
         
     }
     else {
