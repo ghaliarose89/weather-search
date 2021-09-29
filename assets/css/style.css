@@ -1,0 +1,25 @@
+header {
+    height: 60px;
+    background-image: linear-gradient(
+      to right,
+      rgb(83, 115, 255),
+      rgb(42, 27, 83)
+    );
+  }
+  
+  /*List styling*/
+  
+  /* ul {
+    margin-top: 10px;
+  }
+  
+  ul li {
+    margin: 10px;
+  } */
+  .hidden{
+    visibility: hidden;
+    
+  }
+  .bkg{
+    background-color: cornflowerblue;
+  }
