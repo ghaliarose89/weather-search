@@ -12,7 +12,7 @@ var cityname = citySearch.value.trim();
 var historyBox = document.getElementById("searchHistory");
 var weatherarr = [];
 
-loadHistory();
+
 
 function saveCity() {
     var cityname = citySearch.value.trim();
@@ -28,16 +28,17 @@ function saveCity() {
         histBtn.innerHTML = cityname;
         historyBox.append(histBtn);
         //comment
-        
+
     }
     else {
         alert("please enter a city name");
+        return;
     }
 
 };
 
 function loadHistory() {
-    weatherarr = JSON.parse(localStorage.getItem("cityName"));
+    weatherarr = JSON.parse(localStorage.getItem("cityName"))|| [];
     for (var i = 0; i < weatherarr.length; i++) {
         var histBtn = document.createElement("button");
         histBtn.setAttribute("id", weatherarr[i]);
@@ -45,11 +46,11 @@ function loadHistory() {
         histBtn.innerHTML = weatherarr[i];
         historyBox.append(histBtn);
         console.log(weatherarr[i]);
-        historyBox.addEventListener("click", function(event){
+        historyBox.addEventListener("click", function (event) {
             var cityname = event.targer.getAttribute("id");
-            if (cityname){
+            if (cityname) {
                 getCityInfo(cityname);
-                
+
             }
         });
     }
@@ -68,12 +69,11 @@ function getCityInfo(cityname) {
             cityName.innerHTML = cityname.toUpperCase() +
                 " (" + (today.getMonth() + 1) + '/' + (today.getDate()) + '/' + today.getFullYear() + ")"
                 + "<img src='http://openweathermap.org/img/wn/" + data.weather[0].icon + "@2x.png'/>"
-            console.log(data);
+            
             var lat = (data.coord.lat);
-            console.log(lat);
             var lon = (data.coord.lon);
-            console.log(lon);
-            //console.log (data);
+            
+            
 
             fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&units=imperial&appid=d9941e83b4286a556931774882f29cd7"
             )
@@ -82,10 +82,9 @@ function getCityInfo(cityname) {
                     return d.json();
                 })
                 .then(function (weathersearch) {
-                    console.log(weathersearch.current.uvi);
-                    console.log(weathersearch.current.wind_speed.toFixed(1) + " MPH");
+                    console.log (weathersearch);
                     weatherinfo(weathersearch);
-                   
+
                 });
         });
 };
@@ -100,35 +99,35 @@ function weatherinfo(weather) {
     wind.textContent = "Wind: " + weather.current.wind_speed.toFixed(1) + " MPH";
     var uvi = weather.current.uvi.toFixed(1);
     if (uvi >= 0) {
-        uv.style.background = "green";
+        uv.className = "uv-index-green";
     }
     if (uvi >= 3) {
-        uv.style.background = "yellow";
+        uv.className = "uv-index-yellow";
     }
     if (uvi >= 8) {
-        uv.style.background = "red";
+        uv.className = "uv-index-red";
     }
     uv.textContent = "UV: " + weather.current.uvi.toFixed(1);
 
     //weather for 5 days
     var weather5Days = weather.daily;
-
     for (var i = 0; i < 5; i++) {
         var bodyCardholder = document.createElement('div');
         bodyCardholder.classList = "card m-2 others bkg";
         bodyCardholder.style = "width: 16rem; height: 15rem;"
         var date = (today.getMonth() + 1) + '/' + (today.getDate() + i + 1) + '/' + today.getFullYear();
-        //+ "<img src='http://openweathermap.org/img/wn/" + weaweather5Days[i].weather[0].icon + "@2x.png'/>";
-        //<img src='http://openweathermap.org/img/wn/" + weaweather5Days[i].weather[0].icon + "@2x.png'/>
+        + "<img src='http://openweathermap.org/img/wn/" + weather5Days[i].weather[0].icon +"@2x.png'/>";
+        //
         bodyCardholder.innerHTML = "<h4>" + date + "</h5>" +
             "<p> Temp: " + weather5Days[i].temp.day.toFixed(1) + "°F" + "</p>"
             + "<p> Humidity: " + weather5Days[i].humidity.toFixed(1) + "%" + "</p>"
             + "<p> Wind Speed: " + weather5Days[i].wind_speed.toFixed(1) + " MPH" + "</p>"
         cardBox.append(bodyCardholder);
+        console.log( "<img src='http://openweathermap.org/img/wn/'" + weather5Days[i].weather[0].icon +"@2x.png'/>");
     }
 
 };
-
+loadHistory();
 $("#search-btn").click(function (event) {
     event.preventDefault();
     var cityname = citySearch.value.trim();

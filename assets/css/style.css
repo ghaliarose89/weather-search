@@ -23,3 +23,19 @@ header {
   .bkg{
     background-color: cornflowerblue;
   }
+
+  .uv-index-green {
+    padding: 1px 5px;
+    background-color: green;
+    border-radius: 5px;
+  }
+  .uv-index-yellow {
+    padding: 1px 5px;
+    background-color: yellow;
+    border-radius: 5px;
+  }
+  .uv-index-red {
+    padding: 1px 5px;
+    background-color: rgb(226, 59, 59);
+    border-radius: 5px;
+  }
