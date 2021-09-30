@@ -38,13 +38,20 @@ function saveCity() {
 
 function loadHistory() {
     weatherarr = JSON.parse(localStorage.getItem("cityName"));
-    for (var i = 0; i < weatherarr.lenght; i++) {
+    for (var i = 0; i < weatherarr.length; i++) {
         var histBtn = document.createElement("button");
         histBtn.setAttribute("id", weatherarr[i]);
         histBtn.classList = "btn btn-secondary gap-2 col-8 mx-auto mb-3";
         histBtn.innerHTML = weatherarr[i];
         historyBox.append(histBtn);
-
+        console.log(weatherarr[i]);
+        historyBox.addEventListener("click", function(event){
+            var cityname = event.targer.getAttribute("id");
+            if (cityname){
+                getCityInfo(cityname);
+                
+            }
+        });
     }
 };
 
@@ -128,10 +135,4 @@ $("#search-btn").click(function (event) {
     getCityInfo(cityname);
     saveCity();
 });
-historyBox.addEventListener("click", function(event){
-    var cityname = event.targer.getAttribute("id");
-    if (cityname){
-        getCityInfo(cityname);
-        
-    }
-});
+
