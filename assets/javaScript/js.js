@@ -47,7 +47,7 @@ function loadHistory() {
         historyBox.append(histBtn);
         console.log(weatherarr[i]);
         historyBox.addEventListener("click", function (event) {
-            var cityname = event.targer.getAttribute("id");
+            var cityname = event.target.getAttribute("id");
             if (cityname) {
                 getCityInfo(cityname);
 
@@ -112,10 +112,11 @@ function weatherinfo(weather) {
     //weather for 5 days
     var weather5Days = weather.daily;
     for (var i = 0; i < 5; i++) {
+        console.log(weather5Days[i].weather[0].icon);
         var bodyCardholder = document.createElement('div');
         bodyCardholder.classList = "card m-2 others bkg";
         bodyCardholder.style = "width: 16rem; height: 15rem;"
-        var date = (today.getMonth() + 1) + '/' + (today.getDate() + i + 1) + '/' + today.getFullYear();
+        var date = (today.getMonth() + 1) + '/' + (today.getDate() + i + 1) + '/' + today.getFullYear()
         + "<img src='http://openweathermap.org/img/wn/" + weather5Days[i].weather[0].icon +"@2x.png'/>";
         //
         bodyCardholder.innerHTML = "<h4>" + date + "</h5>" +
