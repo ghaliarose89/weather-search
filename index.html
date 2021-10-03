@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Weather App Search</title>
+    <title> Weather Search</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
         integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
@@ -17,14 +17,14 @@
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <header class="container-fluid text-white">
-    <h1 class="text-center">Weather Dashboard</h1>
+    <h1 class="text-center">Weather Search</h1>
 </header>
 
 <body>
     <main class="container-fluid">
         <div class="row">
             <div class="col-md-3" id="searchFeature">
-                <h2>Search for a City:</h2>
+                <h2 class="h2">Search for a City:</h2>
                 <hr>
                 <!--Weather buttons will go here-->
                 <input class=" gap-2 col-8 mx-auto mb-3" id="text-iput">
@@ -33,13 +33,13 @@
             </div>
             <div class="col-9 mt-2 hidden  " id="locationCity">
                 <div class="border border-dark current-info bkg">
-                    <h2 class="ml-2 date-container date" id="date-title"></h2>
+                    <h2 class="ml-2 date-container date h2" id="date-title"></h2>
                     <div id="cureentWeather">
 
-                        <p id=temp></p>
-                        <p id=wind></p>
-                        <p id=humidity></p>
-                        <p id=uv></p>
+                        <p id=temp class="weatherinfo"></p>
+                        <p id=wind class="weatherinfo"></p>
+                        <p id=humidity class="weatherinfo"></p>
+                        <p id=uv class="weatherinfo"></p>
 
                     </div>
 

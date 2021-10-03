@@ -2,23 +2,23 @@
 
 ### Description: 
 This application allows to:
-* display cureent date and weather dedinging on the city or country searsh.
-* When the user enter the city/ country name, the app will display current weather tempreture, humidity , and uv index.
-* Also, the app provide fifve future days  forecast.
-* Under history search, the city button will be added depende on the search the user made.
-* When the user refresh the page, all history search will be shown in the screen.
-* When the user press on the  history citynmae, the app will display cureent and five days forecast. 
+* display current date and weather dining on the city or country search.
+* When the user enters the city/ country name, the app will display current weather temperature, humidity, and UV index.
+* Also, the app provides five future days forecasts.
+* Under history search, the city buttons will be added depending on the search the user made.
+* When the user refreshes the page, all history searches will be shown on the screen.
+* When the user press on the history city name, the app will display the current and five days forecast. 
 
 
 ## Instructions:
-The user shou enter the city name in the inputtext then press on search to get the results
+The user should enter the city name in the input text then press on the search to get the results
 as  following snips:
 
-![ScreenShot](./assets/pictures/Capture1.JPG)
+![ScreenShot](.\assets\Pictures\Screenshot 2021-10-03 121650.JPG)
 
 
 ## Website
- https://ghaliarose89.github.io/work-planner/
+ https://ghaliarose89.github.io/weather-search/
 
 
 ### Contribution

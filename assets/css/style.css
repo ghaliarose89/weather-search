@@ -1,12 +1,21 @@
+
+
 header {
     height: 60px;
     background-image: linear-gradient(
       to right,
-      rgb(83, 115, 255),
-      rgb(42, 27, 83)
+      rgb(14, 28, 104),
+      cornflowerblue
     );
   }
+  .h2{
+    color:  rgb(32, 53, 173);
+  }
+  p {
+    font-weight: bolder;
+    margin-left: 5px;
   
+  }
   /*List styling*/
   
   /* ul {
@@ -38,4 +47,7 @@ header {
     padding: 1px 5px;
     background-color: rgb(226, 59, 59);
     border-radius: 5px;
+  }
+  h4{
+    color: rgb(32, 53, 173);
   }
