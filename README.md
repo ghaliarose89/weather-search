@@ -12,7 +12,7 @@ This application allows to:
 
 ## Instructions:
 The user should enter the city name in the input text then press on the search to get the results
-as  following snips:
+as  following snip url:
 
 [Imgur](https://imgur.com/XHuwqib)
 
