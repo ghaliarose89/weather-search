@@ -14,7 +14,7 @@ This application allows to:
 The user should enter the city name in the input text then press on the search to get the results
 as  following snips:
 
-![ScreenShot](./assets/Pictures/Screenshot 2021-10-03 121650.JPG)
+![ScreenShot](assets\Pictures\Screenshot 2021-10-03 121650.JPG)
 
 
 ## Website
