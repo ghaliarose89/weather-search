@@ -14,7 +14,7 @@ This application allows to:
 The user should enter the city name in the input text then press on the search to get the results
 as  following snips:
 
-![ScreenShot](https://imgur.com/XHuwqib)
+[Imgur](https://imgur.com/XHuwqib)
 
 
 ## Website
